@@ -1,0 +1,73 @@
+
+# BEGIN WordPress
+
+# BEGIN Hide WP
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+  RewriteRule ^m-tkv.ru/admin /wp-login.php$1 [L,QSA]
+
+  RewriteRule ^media/(.*) /wp-content/uploads/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/uploads/(.*) /404 [L]
+
+  RewriteRule ^template/(.*) /wp-content/themes/mystile/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/themes(.*) /404 [L]
+
+  RewriteRule ^1bcbab1563779c2b28f015fb7cf2f879/(.*) /wp-content/themes/$1 [L,QSA]
+
+  RewriteRule ^css/(.*) /wp-content/themes/mystile/$1 [L,QSA]
+
+  RewriteRule ^style.css /wp-content/themes/mystile/style.css [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^(readme.html|license.txt|wp-config-sample.php)(.*) /404 [L]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^(wp-config.php|wp-settings.php|wp-load.php)(.*) /404 [L]
+
+  RewriteRule ^ext/c1/(.*) /wp-content/plugins/contact-form-7/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/plugins/contact-form-7/(.*) /wp-content/plugins/contact-form-7/$1 [L,QSA]
+
+  RewriteRule ^ext/h1/(.*) /wp-content/plugins/hide-wp/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/plugins/hide-wp/(.*) /wp-content/plugins/hide-wp/$1 [L,QSA]
+
+  RewriteRule ^ext/r1/(.*) /wp-content/plugins/responsive-photo-gallery/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/plugins/responsive-photo-gallery/(.*) /wp-content/plugins/responsive-photo-gallery/$1 [L,QSA]
+
+  RewriteRule ^ext/w1/(.*) /wp-content/plugins/woocommerce/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/plugins/woocommerce/(.*) /wp-content/plugins/woocommerce/$1 [L,QSA]
+
+  RewriteRule ^ext/w2/(.*) /wp-content/plugins/wordpress-seo/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/plugins/wordpress-seo/(.*) /wp-content/plugins/wordpress-seo/$1 [L,QSA]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^wp-content/plugins/(.*) /404 [L]		
+
+</IfModule>
+# END Hide WP
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
